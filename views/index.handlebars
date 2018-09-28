@@ -1,0 +1,58 @@
+ <h2 class="page-header">Dashboard</h2>
+<p>Welcome to your dashboard</p>
+<p>Want to send us anywhere, to get you something or deliver something?</p>
+<p>Fill in the form below then click the <bkp>Send Us</bkp> button</p>  
+<p><strong>We deliver within 30 min</strong></p>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/forms">
+   <div class="form-group">
+    <label>TYPE: Take/ Bring</label>
+    <input type="text" class="form-control" placeholder="Which type of service do you want?" name="type">
+  </div>
+  <div class="form-group">
+    <label>WHAT: Commodity , Quantity and price (separated by a comma) for unsure price input "Null"</label>
+    <input type="text" class="form-control" placeholder="Which commodity/s do you want us to TAKE/ BRING" name="goods">
+  </div>
+   <div class="form-group">
+    <label>WHERE from: Where do you want us to get your WHAT commodities</label>
+    <input type="text" class="form-control" placeholder="Tell us where to get them" name="wherefrom">
+  </div>
+  <div class="form-group">
+    <label>WHERE to: Where do you want us to deliver your WHAT's from WHERE, TO?</label>
+    <input type="text" class="form-control" placeholder="to your place or mine?" name="whereto">
+  </div>
+  <div class="form-group">
+    <label>PAYMENTS</label>
+    <p>*NOTE* T&c Apply..</p>
+    <p>Payments Are done immeditely after confirmation</p>
+    <p>of delivery.</p>
+  </div>
+  <div class="form-group">
+    <label>METHOD: cash/ mpesa</label>
+    <input type="text" class="form-control" placeholder="How are you going to pay" name="paymethod">
+  </div>
+  <div class="form-group">
+    <label>Amount: How much in total is your budget for your WHAT'S from WHERE</label>
+    <input type="number" class="form-control" placeholder="If not sure of the price input '0'" name="amount">
+  </div>
+    
+  <div class="form-group">
+      <label>Terms and Conditions</label>
+      <p>The minimum charge fee for delivery is 50=/ksh and it</p>
+      <p>includes minor errands of things like getting you credit </p>
+      <p>airtime from your local shop to delivering back the umbrella</p>
+      <p>you borrowed from your neighbour since it was rainig last night.</p>
+      <p><strong>The delivery fee varies in accordance to the distance between the</strong> </p>
+      <p><strong>point of getiing the commodities to the point of delivery.</strong></p>
+    
+  </div>
+  <div class="form-group">
+      <p>by clicking <bold>send us</bold> you agree to our terms and services</p>
+  </div>
+ 
+  <button type="submit" class="btn btn-default">Send Us</button>
+</form>
